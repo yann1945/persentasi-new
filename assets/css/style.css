@@ -21,7 +21,6 @@
    */
 
   --bright-yellow-crayola: hsl(36, 94%, 57%);
-  --portland-orange: hsl(15, 84%, 57%);
   --dark-blue: hsl(210, 100%, 30%);
   --blue-turquoise: hsl(180, 100%, 40%);
   --navy-blue: hsl(210, 100%, 20%);
@@ -643,7 +642,7 @@ body {
 
 .footer-text .link {
   display: inline-block;
-  color: var(--portland-orange);
+  color: var(--blue-turquoise);
 }
 
 .contact-item {
@@ -658,7 +657,7 @@ body {
 .contact-item ion-icon {
   flex-shrink: 0;
   font-size: 22px;
-  color: var(--portland-orange);
+  color: var(--blue-turquoise);
 }
 
 .social-list {
@@ -675,7 +674,7 @@ body {
 }
 
 .social-link:is(:hover, :focus) {
-  background-color: var(--portland-orange);
+  background-color: var(--blue-turquoise);
   color: var(--white);
 }
 
@@ -691,7 +690,7 @@ body {
   transition: var(--transition-1);
 }
 
-.footer-link:is(:hover, :focus) { color: var(--portland-orange); }
+.footer-link:is(:hover, :focus) { color: var(--blue-turquoise); }
 
 .footer-bottom { padding-block: 20px; }
 
@@ -715,7 +714,7 @@ body {
   position: fixed;
   bottom: 10px;
   right: 20px;
-  background-color: var(--portland-orange);
+  background-color: var(--blue-turquoise);
   color: var(--white);
   font-size: 25px;
   padding: 10px;
