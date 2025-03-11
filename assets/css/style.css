@@ -270,13 +270,13 @@ body {
 .has-scrollbar::-webkit-scrollbar { height: 10px; }
 
 .has-scrollbar::-webkit-scrollbar-track {
-  outline: 2px solid var(--portland-orange);
+  outline: 2px solid var(--navy-blue);
   border-radius: var(--radius-10);
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
   border-radius: var(--radius-10);
-  background-color: var(--portland-orange);
+  background-color: var(--navy-blue);
   border: 2px solid var(--white);
 }
 
@@ -449,7 +449,7 @@ body {
   transition: var(--transition-1);
 }
 
-.category-card .card-title:is(:hover, :focus) { color: var(--portland-orange); }
+.category-card .card-title:is(:hover, :focus) { color: var(--navy-blue); }
 
 
 
@@ -477,7 +477,7 @@ body {
   margin-block: 5px 24px;
 }
 
-.offer-card .btn { background-color: var(--portland-orange); }
+.offer-card .btn { background-color: var(--navy-blue); }
 
 .offer-card .btn:is(:hover, :focus) { background-color: var(--black); }
 
