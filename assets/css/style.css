@@ -22,6 +22,9 @@
 
   --bright-yellow-crayola: hsl(36, 94%, 57%);
   --portland-orange: hsl(15, 84%, 57%);
+  --dark-blue: hsl(210, 100%, 30%);
+  --blue-turquoise: hsl(180, 100%, 40%);
+  --navy-blue: hsl(210, 100%, 20%);
   --battleship-gray: hsl(0, 0%, 53%);
   --silver-chalice: hsl(0, 0%, 70%);
   --spanish-gray: hsl(0, 0%, 60%);
@@ -234,7 +237,7 @@ body {
 
 .section-title .span {
   display: inline;
-  color: var(--portland-orange);
+  color: var(--dark-blue);
 }
 
 .img-holder {
@@ -349,7 +352,7 @@ body {
   position: absolute;
   top: -8px;
   right: -10px;
-  background-color: var(--portland-orange);
+  background-color: var(--dark-blue);
   color: var(--white);
   font-size: var(--fs-8);
   min-width: 18px;
@@ -424,7 +427,7 @@ body {
 
 .hero .btn { margin-inline: auto; }
 
-.hero .btn:is(:hover, :focus) { background-color: var(--portland-orange); }
+.hero .btn:is(:hover, :focus) { background-color: var(--dark-blue); }
 
 
 
@@ -521,10 +524,10 @@ body {
 
 .product-card .card-title { transition: var(--transition-1); }
 
-.product-card .card-title:is(:hover, :focus) { color: var(--portland-orange); }
+.product-card .card-title:is(:hover, :focus) { color: var(--dark-blue); }
 
 .product-card .card-price {
-  color: var(--portland-orange);
+  color: var(--dark-blue);
   font-size: var(--fs-4);
   font-weight: var(--fw-700);
 }
@@ -829,8 +832,8 @@ body {
   }
 
   .product-card .card-action-btn:is(:hover, :focus) {
-    background-color: var(--portland-orange);
-    border-color: var(--portland-orange);
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
     color: var(--white);
   }
 
@@ -1032,7 +1035,7 @@ body {
     transition: var(--transition-1);
   }
 
-  .header.active .navbar-link:is(:hover, :focus) { color: var(--portland-orange); }
+  .header.active .navbar-link:is(:hover, :focus) { color: var(--dark-blue); }
 
 
 
