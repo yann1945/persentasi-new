@@ -447,7 +447,7 @@ body {
 
 .category-card .card-title:is(:hover, :focus) { color: var(--navy-blue); }
 
-.description {
+.list-text {
 text-align: center;
 color: black;
 font-weight: bold;
