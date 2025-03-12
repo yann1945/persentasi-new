@@ -2,9 +2,6 @@
   #style.css
 \*-----------------------------------*/
 
-/**
- * copyright 2022 codewithsadee
- */
 
 
 
@@ -449,6 +446,14 @@ body {
 }
 
 .category-card .card-title:is(:hover, :focus) { color: var(--navy-blue); }
+
+.description {
+text-align: center;
+color: black;
+font-weight: bold;
+font-size: 18px;
+margin: 20px;
+}
 
 
 
