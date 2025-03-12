@@ -578,10 +578,16 @@ margin: 20px;
 
 .cta .section-title {
   text-align: left;
+  color: var(--white);
   margin-block: 10px 20px;
 }
 
-.cta .section-text { margin-block-end: 30px; }
+.cta .section-text { 
+  margin-block-end: 30px; 
+  color: var(--white);
+  font-weight: bold;
+  font-size: 115%;
+}
 
 .cta .btn:is(:hover, :focus) {
   background-color: var(--white);
