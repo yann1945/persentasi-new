@@ -20,66 +20,33 @@ html, body {
     background-image: linear-gradient(315deg, #EBE3D5 0%, #F3EEEA 100%);
 }
 
-/* Layout utama flex column */
+/* Buat konten di tengah layar */
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Header tetap di atas */
+/* Header hanya teks */
 .header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* Tombol Header */
-.header-buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.header-buttons button {
-    background-color: #776B5D;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-left: 10px;
-}
-.header-buttons button:hover {
-    background-color: #6a5f52;
-}
-
-/* Konten utama */
-.main-content {
-    flex: 1; /* Isi ruang vertikal */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-}
-
-/* Kuis Container */
+/* Kotak soal */
 .quiz-container {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
     width: 600px;
+    max-width: 90%;
     padding: 20px;
 }
 
-/* Judul & pertanyaan */
+/* Judul kuis */
 .quiz-header {
     text-align: center;
     margin-bottom: 20px;
@@ -113,7 +80,7 @@ ul li label {
     cursor: pointer;
 }
 
-/* Tombol navigasi kuis */
+/* Tombol kuis */
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -140,42 +107,27 @@ button:focus {
     outline: none;
     background-color: #99B080;
 }
-
-/* Footer */
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: auto;
-}
 </style>
 
 </head>
 <body>
 
-<div class="header">
-  <h2>Nama Kelompok</h2>
-  <div class="header-buttons">
-    <button onclick="showRepo()">Repo Website</button>
-    <button onclick="window.location.href='hadiah.html'">Hadiah Kuis</button>
-    <button onclick="showResults()">Hasil Kelompok 4</button>
+  <div class="header">
+      Keelompok IV
   </div>
-</div>
 
-<div class="quiz-container">
-  <div class="quiz-header">
-    <h2>Kuis Pengetahuan Umum</h2>
-    <div class="question-indicator" id="question-indicator">Soal ke 1</div>
-    <div class="question" id="question"></div>
-    <div class="options" id="options"></div>
+  <div class="quiz-container">
+      <div class="quiz-header">
+          <h2>Kuis Pengetahuan Umum</h2>
+      </div>
+      <div class="question-indicator" id="question-indicator">Soal ke 1</div>
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+      <div class="button-container">
+          <button id="submit-button" onclick="checkAnswer()">Jawab</button>
+          <button id="back-button" onclick="goBack()">Kembali</button>
+      </div>
   </div>
-  <div class="button-container">
-    <button id="submit-button" onclick="checkAnswer()">Jawab</button>
-    <button id="back-button" onclick="goBack()">Kembali</button>
-  </div>
-</div>
-
 <div id="popup-backdrop">
   <div class="popup">
     <h3 id="popup-title">Jawaban</h3>
@@ -183,10 +135,6 @@ footer {
     <button onclick="closePopup()">Lanjut</button>
   </div>
 </div>
-
-<footer>
-  <p>&copy; 2025 Tugas Tik Kelompok 4. Made by Fathian Firmansyah.</p>
-</footer>
 
 <script>
   const questions = [
