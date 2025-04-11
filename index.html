@@ -1,263 +1,590 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soal Kuis</title>
-  <link rel="icon" href="img/logo.png" type="image/x-icon"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    box-sizing: border-box;
-}
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #EBE3D5;
-    background-image: linear-gradient(315deg, #EBE3D5 0%, #F3EEEA 100%);
-}
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Persentasi Kelompok 4 - TIK</title>
+  <meta name="title" content="Persentasi Kelompok 4 - TIK">
+  <meta name="description" content="Praktik Lintas Bidang Informatika">
 
-/* Buat konten di tengah layar */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-/* Header hanya teks */
-.header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-}
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-/* Kotak soal */
-.quiz-container {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-    width: 600px;
-    max-width: 90%;
-    padding: 20px;
-}
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
 
-/* Judul kuis */
-.quiz-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.question-indicator {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-}
-.question {
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-/* Opsi jawaban */
-.options {
-    width: 100%;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-ul li {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-}
-ul li label {
-    cursor: pointer;
-}
-
-/* Tombol kuis */
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-button {
-    background-color: #776B5D;
-    color: #fff;
-    border: none;
-    width: 48%;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-family: inherit;
-    padding: 1.2rem;
-    border-radius: 5px;
-}
-#back-button {
-    background-color: #FF69B4;
-}
-button:hover {
-    background-color: #6a5f52;
-}
-button:focus {
-    outline: none;
-    background-color: #99B080;
-}
-#popup-backdrop {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.popup {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-/* Saat popup aktif (muncul) */
-#popup-backdrop.show .popup {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Saat popup nonaktif (hilang ke bawah) */
-#popup-backdrop.hide .popup {
-  transform: translateY(100%);
-  opacity: 0;
-}
-</style>
-
-</style>
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
 
 </head>
-<body>
 
-  <div class="header">
-      Keelompok IV
-  </div>
+<body id="top">
 
-  <div class="quiz-container">
-      <div class="quiz-header">
-          <h2>Kuis Pengetahuan Umum</h2>
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <button class="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" aria-label="true" class="close-icon"></ion-icon>
+      </button>
+
+      <a href="#" class="logo">Kelompok IV</a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="https://kelompokiv.yannownd.xyz/presentasi.html" class="navbar-link" data-nav-link>Presentasi</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="https://kelompokiv.yannownd.xyz/start.html" class="navbar-link" data-nav-link>Kuis</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#deskripsi" class="navbar-link" data-nav-link>Deskripsi Kecil</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="https://github.com/yann1945/presentasi-tik" class="navbar-link" data-nav-link>Repository</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="https://kelompokiv.yannownd.xyz/dokumentasi.html" class="navbar-link" data-nav-link>Dokumentasi</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" id="home" aria-label="home"
+        style="background-image: url('./assets/images/hero-banner.jpg')">
+        <div class="container">
+
+          <h1 class="h1 hero-title">
+            <span class="span">Welcome To<br> Persentasi Kelompok IV
+          </h1>
+
+          <p class="hero-text">kata ucapan dan tujuan presentasi ......</p>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ANGGOTA
+      -->
+
+      <section class="section category" aria-label="category">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            <span class="span">List</span> Anggota
+          </h2>
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="category-card">
+
+                <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
+                  <img src="./assets/images/category-1.jpg" width="330" height="300" loading="lazy" alt="Cat Food"
+                    class="img-cover">
+                </figure>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Raditia Nugraha (25)</a>
+                </h3>
+
+                <p class="list-text">   Sebagai:<br> - Ketua<br> - Persentasi<br></p>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="category-card">
+
+                <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
+                  <img src="./assets/images/category-3.jpg" width="330" height="300" loading="lazy" alt="Dog Food"
+                    class="img-cover">
+                </figure>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Fathian Firmansyah (07)</a>
+                </h3>
+
+                <p class="list-text">   Sebagai:<br> - Programing<br> - Persentasi<br></p>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="category-card">
+
+                <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
+                  <img src="./assets/images/category-4.jpg" width="330" height="300" loading="lazy" alt="Dog Toys"
+                    class="img-cover">
+                </figure>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">M. Hammam S.S. (20)</a>
+                </h3>
+
+                <p class="list-text">   Sebagai:<br> - Pemberi Informasi<br><br></p>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="category-card">
+
+                <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
+                  <img src="./assets/images/category-5.jpg" width="330" height="300" loading="lazy"
+                    alt="Dog Sumpplements" class="img-cover">
+                </figure>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Ahmad Kamil (03)</a>
+                </h3>
+
+                <p class="list-text">   Sebagai:<br> - Pembuat Dokumentasi<br><br></p>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="category-card">
+
+                <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
+                  <img src="./assets/images/category-5.jpg" width="330" height="300" loading="lazy"
+                    alt="Dog Sumpplements" class="img-cover">
+                </figure>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Fatir Aldiansyah (08)</a>
+                </h3>
+
+                <p class="list-text">   Sebagai:<br> - Pembuat Makalah<br>- Pembuat Dokumentasi<br></p>
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="category-card">
+
+                <figure class="card-banner img-holder" style="--width: 330; --height: 300;">
+                  <img src="./assets/images/category-5.jpg" width="330" height="300" loading="lazy"
+                    alt="Dog Sumpplements" class="img-cover">
+                </figure>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Zulfi Maiza Akbar (32)</a>
+                </h3>
+
+                <p class="list-text">   Sebagai:<br> - Pembuat Makalah<br><br></p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+      <!-- 
+        - #BENEFIT
+      -->
+
+      <section class="section service" aria-label="service">
+        <div class="container">
+
+          <img src="./assets/images/service-image.png" width="122" height="136" loading="lazy" alt="" class="img">
+
+          <h2 class="h2 section-title">
+            <span class="span">Apa yang akan kita dapatkan</span> Di persentasi Kelompok 4?
+          </h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/service-icon-1.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">Dapat Ilmunya</h3>
+
+                <p class="card-text">
+                  Tujuan kita presentasi untuk mengajarkan materi bab 4 tik, Kalau masih nga ngerti parah sih
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/service-icon-2.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">Dapat Hadiah</h3>
+
+                <p class="card-text">
+                  Kita ngadain kuis yang berkesempatan dapat hadiah jika jawabannya benar.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/service-icon-3.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">Seru donk</h3>
+
+                <p class="card-text">
+                  Pasti seru lahh (masa udah sok asik gini masa ga seru).
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="./assets/images/service-icon-4.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">Bisa bertanya</h3>
+
+                <p class="card-text">
+                  Klo binggung? Tanya aja sama host!
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+      <!-- 
+        - #DESKIRPSI
+      -->
+
+      <section class="cta has-bg-image" id="deskripsi" aria-label="deskripsi" style="background-image: url('./assets/images/cta-bg.jpg')">
+        <div class="container">
+
+          <figure class="cta-banner">
+            <img src="./assets/images/cta-banner.png" width="900" height="660" loading="lazy" alt="cat" class="w-100">
+          </figure>
+
+          <div class="cta-content">
+
+            <img src="./assets/images/cta-icon.png" width="120" height="35" loading="lazy" alt="taste guarantee"
+              class="img">
+
+            <h2 class="h2 section-title">Praktik Lintas Bidang Informatika</h2>
+
+            <p class="section-text">
+Nyenyenyee.... deskripsi kecil persentasi atau apa
+            </p>
+
+            <a href="#" class="btn">Mulai Presentasi</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+     <!-- 
+        - #LAINNYA
+      -->
+
+      <section class="section offer" aria-label="offer">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/offer-banner-2.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle">Kuis Berhadiah</p>
+
+                <h3 class="h3 card-title">
+                  Simak persentasi dan<span class="span"> Jawab Kuisnya!</span>
+                </h3>
+
+                <a href="https://kelompokiv.yannownd.xyz/start.html" class="btn">Mulai</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/offer-banner-1.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle">Dokumentasi</p>
+
+                <h3 class="h3 card-title">
+                  Klik untuk Melihat<span class="span"> Dokumentasi Kelompok</span>
+                </h3>
+
+                <a href="https://kelompokiv.yannownd.xyz/start.html" class="btn">Lihat</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="offer-card has-bg-image img-holder"
+                style="background-image: url('./assets/images/offer-banner-2.jpg'); --width: 540; --height: 374;">
+
+                <p class="card-subtitle">Repo Github</p>
+
+                <h3 class="h3 card-title">
+                  Lihat Codingan website di <span class="span">Github</span>
+                </h3>
+
+                <a href="#" class="btn">Lihat</a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- 
+        - #PENUTUP
+      -->
+
+      <section class="section brand" aria-label="brand">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            <span class="span">Sekian Dari Kami</span> Terimakasih
+          </h2>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.jpg')">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">Kelompok IV</a>
+
+          <p class="footer-text">
+            Email atau contact jika kalian ingin Jasa buat Website 😁 (bercanda) <a href="mailto:firmansyahfathian@gmail.com@gmail.com"
+              class="link">firmansyahfathian@gmail.com</a>
+          </p>
+
+          <ul class="contact-list">
+
+            <li class="contact-item">
+              <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+
+              <address class="address">
+                Asia/Indonesia Jakarta, Depok, Jatimulya, KP.Sawah RT.02/01
+              </address>
+            </li>
+
+            <li class="contact-item">
+              <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+
+              <a href="tel:+6287831450858" class="contact-link">(+62) 878-3145-0858</a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-tiktok"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Corporate</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Careers</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQs</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Vendors</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Affiliate Program</a>
+          </li>
+
+        </ul>
+
       </div>
-      <div class="question-indicator" id="question-indicator">Soal ke 1</div>
-      <div class="question" id="question"></div>
-      <div class="options" id="options"></div>
-      <div class="button-container">
-          <button id="submit-button" onclick="checkAnswer()">Jawab</button>
-          <button id="back-button" onclick="goBack()">Kembali</button>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 Dibuat dan diprogram ♥ oleh <a href="#" class="copyright-link">Fathian Firmansyah</a>
+        </p>
+
+        <img src="./assets/images/payment.png" width="397" height="32" loading="lazy" alt="payment method" class="img">
+
       </div>
-  </div>
-<div id="popup-backdrop">
-  <div class="popup">
-    <h3 id="popup-title">Jawaban</h3>
-    <p id="popup-message">Isi hasil jawaban...</p>
-    <button onclick="closePopup()">Lanjut</button>
-  </div>
-</div>
+    </div>
 
-<script>
-  const questions = [
-    { question: "Apa ibukota Indonesia?", options: ["Jakarta", "Bandung", "Surabaya"], answer: "Jakarta" },
-    { question: "Siapa presiden pertama Indonesia?", options: ["Soekarno", "Soeharto", "Jokowi"], answer: "Soekarno" },
-    { question: "Apa warna bendera Indonesia?", options: ["Merah Putih", "Merah Kuning", "Biru Putih"], answer: "Merah Putih" },
-    { question: "Apa mata uang Indonesia?", options: ["Rupiah", "Dollar", "Euro"], answer: "Rupiah" },
-    { question: "Siapa penemu listrik?", options: ["Thomas Edison", "Albert Einstein", "Nikola Tesla"], answer: "Thomas Edison" }
-  ];
+  </footer>
 
-  let currentQuestionIndex = 0;
 
-  function loadQuestion() {
-    const question = questions[currentQuestionIndex];
-    document.getElementById('question-indicator').textContent = `Soal ke ${currentQuestionIndex + 1}`;
-    document.getElementById('question').textContent = question.question;
-    const optionsContainer = document.getElementById('options');
-    optionsContainer.innerHTML = '';
-    question.options.forEach(option => {
-      const li = document.createElement('li');
-      li.innerHTML = `<label><input type="radio" name="option" value="${option}"> ${option}</label>`;
-      optionsContainer.appendChild(li);
-    });
-  }
 
-function checkAnswer() {
-  const selected = document.querySelector('input[name="option"]:checked');
-  const popup = document.getElementById('popup-backdrop');
-  const title = document.getElementById('popup-title');
-  const message = document.getElementById('popup-message');
 
-  if (!selected) {
-    title.textContent = "Peringatan";
-    message.textContent = "Silakan pilih jawaban terlebih dahulu.";
-    popup.classList.add("active"); // aktifkan popup
-    return;
-  }
 
-  const isCorrect = selected.value === questions[currentQuestionIndex].answer;
-  title.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
-  message.textContent = isCorrect
-    ? "Selamat, jawaban Anda benar."
-    : `Jawaban yang benar adalah: ${questions[currentQuestionIndex].answer}`;
-  popup.classList.add("active");
-}
+  <!-- 
+    - #BACK TO TOP
+  -->
 
-function closePopup() {
-  const popup = document.getElementById('popup-backdrop');
-  popup.classList.remove("show");
-  popup.classList.add("hide");
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
 
-  setTimeout(() => {
-    popup.style.display = "none";
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      loadQuestion();
-    } else {
-      document.getElementById('question-indicator').textContent = "";
-      document.getElementById('question').textContent = "Terima kasih telah mengikuti kuis!";
-      document.getElementById('options').innerHTML = "";
-      const btn = document.getElementById('submit-button');
-      btn.textContent = "Ulangi";
-      btn.onclick = () => {
-        currentQuestionIndex = 0;
-        loadQuestion();
-        btn.textContent = "Jawab";
-        btn.onclick = checkAnswer;
-      };
-    }
-  }, 400);
-}
 
-  function goBack() {
-    if (currentQuestionIndex > 0) {
-      currentQuestionIndex--;
-      loadQuestion();
-    } else {
-      window.location.href = 'index.html';
-    }
-  }
 
-  function showResults() {
-    alert("Hasil belum tersedia.");
-  }
 
-  window.onload = loadQuestion;
-</script>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>
