@@ -203,7 +203,7 @@ function checkAnswer() {
   const isCorrect = selected.value === questions[currentQuestionIndex].answer;
   document.getElementById('popup-title').textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
   document.getElementById('popup-message').textContent = isCorrect
-    ? "Selamat, jawaban Anda benar."
+    ? `Selamat, jawaban Anda benar. Jawabannya ${questions[currentQuestionIndex].answer}`
     : `Jawaban yang benar adalah: ${questions[currentQuestionIndex].answer}`;
 
   popup.classList.remove("hide");
