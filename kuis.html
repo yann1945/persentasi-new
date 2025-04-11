@@ -141,6 +141,11 @@ button:focus {
   transform: translateY(100%);
   opacity: 0;
 }
+.popup-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
 </style>
 
 </style>
@@ -166,6 +171,7 @@ button:focus {
   </div>
 <div id="popup-backdrop">
   <div class="popup">
+    <div class="popup-icon" id="popup-icon">❗</div>
     <h3 id="popup-title">Jawaban</h3>
     <p id="popup-message">Isi hasil jawaban...</p>
     <button onclick="closePopup()">Lanjut</button>
@@ -201,11 +207,13 @@ function checkAnswer() {
   const popup = document.getElementById('popup-backdrop');
   const title = document.getElementById('popup-title');
   const message = document.getElementById('popup-message');
+  const icon = document.getElementById('popup-icon');
 
   if (!selected) {
     title.textContent = "Peringatan";
     message.textContent = "Silakan pilih jawaban terlebih dahulu.";
-    popup.classList.add("active"); // aktifkan popup
+    icon.textContent = "❌"; // Ikon silang
+    popup.classList.add("active");
     return;
   }
 
@@ -214,6 +222,7 @@ function checkAnswer() {
   message.textContent = isCorrect
     ? "Selamat, jawaban Anda benar."
     : `Jawaban yang benar adalah: ${questions[currentQuestionIndex].answer}`;
+  icon.textContent = isCorrect ? "✅" : "❌"; // Centang atau silang
   popup.classList.add("active");
 }
 
