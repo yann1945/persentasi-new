@@ -199,17 +199,22 @@ button:focus {
 function checkAnswer() {
   const selected = document.querySelector('input[name="option"]:checked');
   const popup = document.getElementById('popup-backdrop');
-  if (!selected) return alert("Silakan pilih jawaban terlebih dahulu.");
+  const title = document.getElementById('popup-title');
+  const message = document.getElementById('popup-message');
+
+  if (!selected) {
+    title.textContent = "Peringatan";
+    message.textContent = "Silakan pilih jawaban terlebih dahulu.";
+    popup.classList.add("active"); // aktifkan popup
+    return;
+  }
 
   const isCorrect = selected.value === questions[currentQuestionIndex].answer;
-  document.getElementById('popup-title').textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
-  document.getElementById('popup-message').textContent = isCorrect
+  title.textContent = isCorrect ? "Jawaban Benar!" : "Jawaban Salah!";
+  message.textContent = isCorrect
     ? "Selamat, jawaban Anda benar."
     : `Jawaban yang benar adalah: ${questions[currentQuestionIndex].answer}`;
-
-  popup.classList.remove("hide");
-  popup.classList.add("show");
-  popup.style.display = "flex";
+  popup.classList.add("active");
 }
 
 function closePopup() {
